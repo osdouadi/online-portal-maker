@@ -1,0 +1,11 @@
+{
+  "name": "portal-maker",
+  "version": "1.0.0",
+  "description": "A multi-tenant system for making portals",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oussama Douadi",
+  "license": "ISC"
+}
