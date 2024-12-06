@@ -1,11 +1,18 @@
 const systemConfig = {
   // SYSTEM
-  port: 8000,
-  altPort: 3000,
+  PORT: 8000,
+  ALT_PORT: 3000,
 
   // DATABASE
-  mongoDBURL: process.env.DATABASE_URL,
-  mongoDBName: process.env.DATABASE_NAME,
+  database: {
+    MONGO_DB_URL: process.env.DATABASE_URL,
+    MONGO_DB_NAME: process.env.DATABASE_NAME,
+  },
+
+  // SECURITY
+  security: {
+    ENCRYPTION_KEY: process.env.ENCRYPTION_KEY,
+  },
 };
 
 module.exports = systemConfig;

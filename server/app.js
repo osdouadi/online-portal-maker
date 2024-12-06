@@ -7,8 +7,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const systemConfig = require("./config/system-config");
-const dbConnect = require("./database/connection");
-
+const dbUtils = require("./utils/database/db-utils");
 
 const app = express();
 
@@ -27,13 +26,13 @@ app.use((req, res, next) => {
   next();
 });
 
-dbConnect();
-
 app.all("*", (req, res, next) => {
   next(new AppError(`Cannot find ${req.originalUrl} on this server!`, 404));
 });
 
-const port = systemConfig.port || systemConfig.altPort;
+dbUtils.establishDBConnection();
+
+const port = systemConfig.PORT || systemConfig.ALT_PORT;
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
