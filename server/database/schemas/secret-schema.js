@@ -4,7 +4,7 @@ const { security } = require("../../config/messages");
 const { Schema } = mongoose;
 const { validationMessage } = security;
 
-const securitySchema = new Schema(
+const secretSchema = new Schema(
   {
     encryptedJWTSecret: {
       type: String,
@@ -14,12 +14,12 @@ const securitySchema = new Schema(
   { timestamps: true }
 );
 
-securitySchema.virtual("id").get(function () {
+secretSchema.virtual("id").get(function () {
   return this._id.toHexString();
 });
 
-securitySchema.set("toJSON", {
+secretSchema.set("toJSON", {
   virtuals: true
 })
 
-module.exports = securitySchema
+module.exports = secretSchema;

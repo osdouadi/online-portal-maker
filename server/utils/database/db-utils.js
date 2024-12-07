@@ -27,6 +27,13 @@ const dbUtils = {
       }
     }
   },
+
+  constructModel: (modelName, schema) => {
+    return {
+      modelName: modelName,
+      schema: schema,
+    };
+  },
 };
 
 module.exports = dbUtils;

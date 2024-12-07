@@ -24,6 +24,4 @@ tenantSchema.set("toJSON", {
   virtuals: true,
 });
 
-const tenant = model("tenant", tenantSchema);
-
-module.exports = tenant;
+module.exports = tenantSchema;
