@@ -16,6 +16,7 @@ const messages = {
     },
     errorMessages: {
       MISSING_TENANT_KEY: "Tenant KEY was not provided.",
+      TENANT_CREATION: "Failed to create tenant.",
     },
   },
   security: {
